@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 import Spinner from '../../../components/UI/Spinner/Spinner';
+import ProgressTop from '../../../components/UI/ProgressTop/ProgressTop';
 
 class Lupulo extends Component {
   state = {
@@ -28,6 +30,7 @@ class Lupulo extends Component {
   }
 
   render() {
+    let precio = null;
     let lupulo = <Spinner />
 
     if (this.state.loaded && (this.state.error || !this.state.lupulo)) {
@@ -35,34 +38,61 @@ class Lupulo extends Component {
     }
     
     if (this.state.lupulo) {
+      precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(this.state.lupulo.precio);
       lupulo = (
         <>
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item"><NavLink to="/lupulos" className="text-success">Lupulos</NavLink></li>
+              <li className="breadcrumb-item active" aria-current="page">{this.state.lupulo.nombre}</li>
+            </ol>
+          </nav>
           <h4 className="display-4">{this.state.lupulo.nombre}</h4>
           <hr />
-          <strong>Tipo: </strong>{this.state.lupulo.tipo}<br />
-          <strong>Descripcion: </strong>{this.state.lupulo.descripcion}<br />
-          <strong>Precio: </strong>{this.state.lupulo.precio}<br />
-          <strong>Stock: </strong>{this.state.lupulo.stock}<br />
-          <strong>Tamaño cono: </strong>{this.state.lupulo.tamaño_cono}<br />
-          <strong>Forma cono: </strong>{this.state.lupulo.forma_cono}<br />
-          <strong>Lupulina: </strong>{this.state.lupulo.lupulina}<br />
-          <strong>Densidad cono: </strong>{this.state.lupulo.densidad_cono}<br />
-          <strong>Capacidad cono: </strong>{this.state.lupulo.capacidad_cono}<br />
-          <strong>Facilidad cosecha: </strong>{this.state.lupulo.facilidad_cosecha}<br />
-          <strong>Alfa acidos: </strong>{this.state.lupulo.alfa_acidos}<br />
-          <strong>Beta acidos: </strong>{this.state.lupulo.beta_acidos}<br />
-          <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulonas}<br />
-          <strong>Colupulonas: </strong>{this.state.lupulo.colupulonas}<br />
-          <strong>Indice almacenamiento: </strong>{this.state.lupulo.indice_almacenamiento}<br />
-          <strong>Humedad: </strong>{this.state.lupulo.humedad}
+          <div className="row">
+            <div className="col-lg-4 mb-5">
+              <div className="text-center"><img src="https://via.placeholder.com/300" alt={this.state.lupulo.nombre} /></div><br />
+              <strong>Tipo: </strong><br />{this.state.lupulo.tipo}<br />
+              <strong>Descripcion: </strong><br />{this.state.lupulo.descripcion}<br />
+            </div>
+            <div className="col-lg-4 mb-5">
+              <h4 className="text-success h3">Características físicas</h4>
+              <strong>Tamaño cono: </strong>{this.state.lupulo.tamaño_cono}<br />
+              <strong>Forma cono: </strong>{this.state.lupulo.forma_cono}<br />
+              <strong>Lupulina: </strong>{this.state.lupulo.lupulina}<br />
+              <strong>Densidad cono: </strong>{this.state.lupulo.densidad_cono}<br />
+              <strong>Capacidad cono: </strong>{this.state.lupulo.capacidad_cono}<br />
+              <strong>Facilidad cosecha: </strong>{this.state.lupulo.facilidad_cosecha}<br />
+              <hr />
+              <h4 className="text-success h3">Características químicas</h4>
+              <strong>Alfa acidos: </strong>{this.state.lupulo.alfa_acidos}<br />
+              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acidos}<br />
+              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulonas}<br />
+              <strong>Colupulonas: </strong>{this.state.lupulo.colupulonas}<br />
+              <strong>Indice almacenamiento: </strong>{this.state.lupulo.indice_almacenamiento}<br />
+              <strong>Humedad: </strong>{this.state.lupulo.humedad}
+            </div>
+            <div className="col-lg-4 w-75 mx-auto">
+              <div className="card text-center">
+                <div className="card-body">
+                  <h5 className="card-title">Precio: {precio}</h5>
+                  <p className="card-text">Cantidad disponible: {this.state.lupulo.stock}</p>
+                  <NavLink to="/carro" className="btn btn-success">Agregar al carro</NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       );
     }
 
     return (
-      <div className="container my-5">
-        {lupulo}
-      </div>
+      <>
+        {!this.state.lupulo && !this.state.error ? <ProgressTop /> : null}
+        <div className="container my-5">
+          {lupulo}
+        </div>
+      </>
     );
   }
 }

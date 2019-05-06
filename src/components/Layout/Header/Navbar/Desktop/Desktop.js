@@ -20,8 +20,8 @@ const Desktop = () => {
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <NavLink to="/carro" className="btn btn-outline-info text-info my-2 my-sm-0 mx-1" activeClassName="btn-info text-light rounded"><i className="fas fa-shopping-cart mr-2"></i>Ver carro</NavLink>
-          <NavLink to="/ingresar" className="btn btn-outline-info text-info my-2 my-sm-0 mx-1" activeClassName="btn-info text-light rounded"><i className="fas fa-shopping-cart mr-2"></i>Ingresar</NavLink>
+          <NavLink to="/carro" className="btn btn-outline-success text-success my-2 my-sm-0 mx-1" activeClassName="btn-success text-light rounded"><i className="fas fa-shopping-cart mr-2"></i>Ver carro</NavLink>
+          <NavLink to="/ingresar" className="btn btn-outline-success text-success my-2 my-sm-0 mx-1" activeClassName="btn-success text-light rounded"><i className="fas fa-sign-in-alt mr-2"></i>Ingresar</NavLink>
         </form>
       </div>
     </nav>

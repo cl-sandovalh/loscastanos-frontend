@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Spinner from '../../components/UI/Spinner/Spinner';
 import ListaLupulos from '../../components/Lupulos/ListaLupulos/ListaLupulos';
+import ProgressTop from '../../components/UI/ProgressTop/ProgressTop';
 
 class Lupulos extends Component {
   state = {
@@ -25,7 +26,12 @@ class Lupulos extends Component {
 	}
 
   render() {
-    let lupulos = <Spinner />
+    let lupulos = (
+      <>
+      <Spinner />
+      </>
+    );
+      
 
     if (this.state.error) {
       lupulos = <p className="lead text-center">No se encontraron productos.</p>
@@ -36,11 +42,14 @@ class Lupulos extends Component {
     }
 
     return (
-      <div className="container mt-5">
-        <h4 className="display-4 text-center">Lupulos</h4>
-        <hr />
-        {lupulos}
-      </div>
+      <>
+        {!this.state.lupulos && !this.state.error ? <ProgressTop /> : null}
+        <div className="container mt-5">
+          <h4 className="display-4 text-center">Lupulos</h4>
+          <hr />
+          {lupulos}
+        </div>
+      </>
     )
   }
 }

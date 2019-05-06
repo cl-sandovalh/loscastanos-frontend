@@ -6,9 +6,12 @@ import MobileMenu from './Mobile/MobileMenu/MobileMenu';
 
 class Navbar extends Component {
   state = {
-    mobileMenu: false
+    mobileMenu: false,
+    email: null,
+    password: null
   }
 
+  // MobileMenu toggle:
   mobileMenuOpenHandler = () => {
     this.setState({
       mobileMenu: true
@@ -21,12 +24,37 @@ class Navbar extends Component {
     })
   }
 
+  // MobileMenu login:
+  emailChangeHandler = (event) => {
+    this.setState({
+      email: event.target.value
+    });
+  }
+
+  passwordChangeHandler = (event) => {
+    this.setState({
+      password: event.target.value
+    });
+  }
+
+  loginSubmitHandler = (event) => {
+    this.mobileMenuCloseHandler();
+    console.log(event.target.checkValidity());
+  }
+
+
   render() {
     return (
       <>
         <Desktop />
         <Mobile open={this.mobileMenuOpenHandler} />
-        <MobileMenu toggle={this.state.mobileMenu} close={this.mobileMenuCloseHandler} />
+        <MobileMenu 
+          toggle={this.state.mobileMenu} 
+          close={this.mobileMenuCloseHandler} 
+          emailChange={this.emailChangeHandler}
+          passwordChange={this.passwordChangeHandler}
+          loginSubmit={this.loginSubmitHandler}
+        />
       </>
     )
   }
