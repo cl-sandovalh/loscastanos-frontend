@@ -16,16 +16,16 @@ const MobileMenu = (props) => {
       </div>
       <ul className="navbar-nav text-center" onClick={props.close}>
         <li className="nav-item">
-          <NavLink to="/" exact className="nav-link text-light lead" activeClassName="font-weight-bold">Inicio</NavLink>
+          <NavLink to="/" exact className="nav-link text-light h3" activeClassName="font-weight-bold">Inicio</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/lupulos" className="nav-link text-light lead" activeClassName="font-weight-bold">Lupulos</NavLink>
+          <NavLink to="/lupulos" className="nav-link text-light h3" activeClassName="font-weight-bold">Lupulos</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/contacto" className="nav-link text-light lead" activeClassName="font-weight-bold">Contacto</NavLink>
+          <NavLink to="/contacto" className="nav-link text-light h3" activeClassName="font-weight-bold">Contacto</NavLink>
         </li>
       </ul>
-      <form className="mt-5" onSubmit={props.loginSubmit}>
+      <form className="mt-5 w-75 mx-auto" onSubmit={props.loginSubmit}>
         <div className="form-group">
           <input type="email" value={props.email} onChange={props.emailChange} className="form-control" aria-describedby="email" placeholder="Email" required/>
         </div>

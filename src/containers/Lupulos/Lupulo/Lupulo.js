@@ -52,8 +52,8 @@ class Lupulo extends Component {
           <div className="row">
             <div className="col-lg-4 mb-5">
               <div className="text-center"><img src="https://via.placeholder.com/300" alt={this.state.lupulo.nombre} /></div><br />
-              <strong>Tipo: </strong><br />{this.state.lupulo.tipo}<br />
-              <strong>Descripcion: </strong><br />{this.state.lupulo.descripcion}<br />
+              <p><strong>Tipo: </strong><br />{this.state.lupulo.tipo}</p>
+              <p><strong>Descripcion: </strong><br />{this.state.lupulo.descripcion}</p>
             </div>
             <div className="col-lg-4 mb-5">
               <h4 className="text-success h3">Características físicas</h4>
@@ -75,9 +75,11 @@ class Lupulo extends Component {
             <div className="col-lg-4 w-75 mx-auto">
               <div className="card text-center">
                 <div className="card-body">
-                  <h5 className="card-title">Precio: {precio}</h5>
+                  <h5 className="card-title h2">{precio}</h5>
                   <p className="card-text">Cantidad disponible: {this.state.lupulo.stock}</p>
-                  <NavLink to="/carro" className="btn btn-success">Agregar al carro</NavLink>
+                  <button to="/carro" className="btn btn-success" disabled={this.state.lupulo.stock <= 0 ? true : false}>
+                    <i className="fas fa-cart-plus mr-2"></i>Agregar al carro
+                  </button>
                 </div>
               </div>
             </div>
