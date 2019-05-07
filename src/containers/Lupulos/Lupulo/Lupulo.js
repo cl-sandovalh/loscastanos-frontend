@@ -51,7 +51,7 @@ class Lupulo extends Component {
           <hr />
           <div className="row">
             <div className="col-lg-4 mb-5">
-              <div className="text-center"><img src="https://via.placeholder.com/300" alt={this.state.lupulo.nombre} /></div><br />
+              <div className="text-center"><img className="mw-100" src="https://via.placeholder.com/500" alt={this.state.lupulo.nombre} /></div><br />
               <p><strong>Tipo: </strong><br />{this.state.lupulo.tipo}</p>
               <p><strong>Descripcion: </strong><br />{this.state.lupulo.descripcion}</p>
             </div>
