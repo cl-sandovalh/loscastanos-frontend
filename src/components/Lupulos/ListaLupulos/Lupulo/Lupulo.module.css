@@ -1,9 +1,10 @@
+.Lupulo {
+  margin: 0;
+  padding: 0;
+}
+
 .Lupulo:hover,
 .Lupulo:active {
   opacity: 0.6;
   transition: 0.2s ease-out;
-}
-
-.Lupulo.card {
-  border-radius: 50px;
 }

@@ -45,7 +45,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Desktop />
         <Mobile open={this.mobileMenuOpenHandler} />
         <MobileMenu 
@@ -55,7 +55,7 @@ class Navbar extends Component {
           passwordChange={this.passwordChangeHandler}
           loginSubmit={this.loginSubmitHandler}
         />
-      </div>
+      </>
     )
   }
 }
