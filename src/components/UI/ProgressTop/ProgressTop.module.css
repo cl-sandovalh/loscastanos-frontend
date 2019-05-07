@@ -1,0 +1,5 @@
+.ProgressTop {
+  height: 5px;
+  z-index: 150;
+  border-radius: 0px;
+}

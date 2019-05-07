@@ -1,0 +1,9 @@
+.MobileOnly {
+  z-index: 100;
+}
+
+@media (min-width: 701px) {
+  .MobileOnly {
+    display: none;
+  }
+}
