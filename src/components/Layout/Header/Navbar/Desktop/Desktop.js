@@ -7,9 +7,9 @@ import Logo from '../../Logo/Logo';
 
 const Desktop = () => {
   return (
-    <nav className={styles.DesktopOnly + " navbar navbar-expand navbar-light color-3"}>
+    <nav className={styles.DesktopOnly + " navbar navbar-expand navbar-dark bg-dark"}>
       <Logo />
-      <div className="collapse navbar-collapse">
+      <div className="collapse navbar-collapse ml-3">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <NavLink to="/" exact className="nav-link">Inicio</NavLink>

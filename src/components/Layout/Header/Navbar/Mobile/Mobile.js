@@ -6,10 +6,10 @@ import Logo from '../../Logo/Logo';
 
 const Mobile = (props) => {
   return (
-    <nav className={styles.MobileOnly + " navbar fixed-top navbar-light color-3"}>
+    <nav className={styles.MobileOnly + " navbar fixed-top bg-dark"}>
       <Logo />
-      <div className="form-inline my-2 my-lg-0">
-        <button className="btn" onClick={props.open}><i className="fas fa-bars h3"></i></button>
+      <div className="w-100 mr-0">
+        <button className={styles.Button + " btn texto-4"} onClick={props.open}><i className="fas fa-bars h3"></i></button>
       </div>
     </nav>
   )

@@ -1,9 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import styles from './Logo.module.css';
+import ImagenLogo from '../../../../assets/logo.png';
 
 const Logo = () => {
   return(
-    <NavLink to="/" exact className="navbar-brand">Los Castaños</NavLink>
+    <img className={styles.Logo} src={ImagenLogo} alt="Logo" />
   );
 }
 

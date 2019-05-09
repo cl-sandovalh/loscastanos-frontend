@@ -1,6 +1,17 @@
 .MobileOnly {
   z-index: 100;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  text-align: right;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  height: 60px;
+}
+
+.Button {
+  color: #E1E6B9;
+}
+
+.Button:hover,
+.Button:active {
+  color: #ABC8A4;
 }
 
 @media (min-width: 701px) {

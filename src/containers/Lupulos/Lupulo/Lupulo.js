@@ -51,7 +51,7 @@ class Lupulo extends Component {
           <hr />
           <div className="row">
             <div className="col-lg-4 mb-5">
-              <div className="text-center"><img className="mw-100" src={"https://loscastanosapi.herokuapp.com/" + this.state.lupulo.image} alt={this.state.lupulo.name} /></div><br />
+              <div className="text-center"><img className="mw-100 rounded" src={"https://loscastanosapi.herokuapp.com/" + this.state.lupulo.image} alt={this.state.lupulo.name} /></div><br />
               <p><strong>Tipo: </strong><br />{this.state.lupulo.lupulo_type}</p>
               <p><strong>Descripcion: </strong><br />{this.state.lupulo.description}</p>
             </div>
@@ -65,12 +65,12 @@ class Lupulo extends Component {
               <strong>Facilidad cosecha: </strong>{this.state.lupulo.ease_harvest}<br />
               <hr />
               <h4 className="text-success h3">Características químicas</h4>
-              <strong>Alfa acidos: </strong>{this.state.lupulo.alpha_acids}<br />
-              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acids}<br />
-              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulones}<br />
-              <strong>Colupulonas: </strong>{this.state.lupulo.columbus}<br />
-              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index}<br />
-              <strong>Humedad: </strong>{this.state.lupulo.humidity}
+              <strong>Alfa acidos: </strong>{this.state.lupulo.alpha_acids} %<br />
+              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acids} %<br />
+              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulones} %<br />
+              <strong>Colupulonas: </strong>{this.state.lupulo.columbus} %<br />
+              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index} %<br />
+              <strong>Humedad: </strong>{this.state.lupulo.humidity} %
             </div>
             <div className="col-lg-4 w-75 mx-auto">
               <div className="card text-center">
