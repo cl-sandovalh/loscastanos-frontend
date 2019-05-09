@@ -1,7 +1,12 @@
 .Hero {
+  width: 100%;
   height: 150px;
-  background-image: url('/static/media/lupulos-header.52efdd3b.jpg');
-  background-size: 100% auto;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: opacity(0.6);
   border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
 }
