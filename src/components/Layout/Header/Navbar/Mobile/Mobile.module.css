@@ -1,5 +1,6 @@
 .MobileOnly {
   z-index: 100;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 701px) {
