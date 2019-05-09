@@ -10,10 +10,10 @@ const ListaLupulos = (props) => {
         props.lupulos.map(lupulo =>
           <Link to={`/lupulos/${lupulo.id}`} key={lupulo.id}>
             <Lupulo 
-              nombre={lupulo.nombre} 
-              tipo={lupulo.tipo} 
-              descripcion={lupulo.descripcion}
-              precio={lupulo.precio}
+              nombre={lupulo.name} 
+              tipo={lupulo.lupulo_type} 
+              descripcion={lupulo.description}
+              precio={lupulo.amount}
               stock={lupulo.stock}
             />
           </Link>

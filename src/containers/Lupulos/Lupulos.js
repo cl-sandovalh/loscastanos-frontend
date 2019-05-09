@@ -12,7 +12,7 @@ class Lupulos extends Component {
   };
 
   componentDidMount() {
-		axios.get('https://loscastanos-d8489.firebaseio.com/lupulos.json')
+		axios.get('https://loscastanosapi.herokuapp.com/lupulos')
 			.then(response => {
 				this.setState({
 					lupulos: response.data

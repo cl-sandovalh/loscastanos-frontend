@@ -14,7 +14,7 @@ class Lupulo extends Component {
 
   componentDidMount() {
 		if (this.props.match.params.id) {
-      axios.get(`https://loscastanos-d8489.firebaseio.com/lupulos/${this.props.match.params.id}.json`)
+      axios.get(`https://loscastanosapi.herokuapp.com/lupulos/${this.props.match.params.id}`)
       .then(response => {
         this.setState({
           lupulo: response.data,
@@ -38,39 +38,39 @@ class Lupulo extends Component {
     }
     
     if (this.state.lupulo) {
-      precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(this.state.lupulo.precio);
+      precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(this.state.lupulo.amount);
       lupulo = (
         <>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><NavLink to="/lupulos" className="text-success">Lupulos</NavLink></li>
-              <li className="breadcrumb-item active" aria-current="page">{this.state.lupulo.nombre}</li>
+              <li className="breadcrumb-item active" aria-current="page">{this.state.lupulo.name}</li>
             </ol>
           </nav>
-          <h4 className="display-4">{this.state.lupulo.nombre}</h4>
+          <h4 className="display-4">{this.state.lupulo.name}</h4>
           <hr />
           <div className="row">
             <div className="col-lg-4 mb-5">
-              <div className="text-center"><img className="mw-100" src="https://via.placeholder.com/500" alt={this.state.lupulo.nombre} /></div><br />
-              <p><strong>Tipo: </strong><br />{this.state.lupulo.tipo}</p>
-              <p><strong>Descripcion: </strong><br />{this.state.lupulo.descripcion}</p>
+              <div className="text-center"><img className="mw-100" src={"https://loscastanosapi.herokuapp.com/" + this.state.lupulo.image} alt={this.state.lupulo.name} /></div><br />
+              <p><strong>Tipo: </strong><br />{this.state.lupulo.lupulo_type}</p>
+              <p><strong>Descripcion: </strong><br />{this.state.lupulo.description}</p>
             </div>
             <div className="col-lg-4 mb-5">
               <h4 className="text-success h3">Características físicas</h4>
-              <strong>Tamaño cono: </strong>{this.state.lupulo.tamaño_cono}<br />
-              <strong>Forma cono: </strong>{this.state.lupulo.forma_cono}<br />
-              <strong>Lupulina: </strong>{this.state.lupulo.lupulina}<br />
-              <strong>Densidad cono: </strong>{this.state.lupulo.densidad_cono}<br />
-              <strong>Capacidad cono: </strong>{this.state.lupulo.capacidad_cono}<br />
-              <strong>Facilidad cosecha: </strong>{this.state.lupulo.facilidad_cosecha}<br />
+              <strong>Tamaño cono: </strong>{this.state.lupulo.cone_size}<br />
+              <strong>Forma cono: </strong>{this.state.lupulo.cone_shape}<br />
+              <strong>Lupulina: </strong>{this.state.lupulo.lupulin}<br />
+              <strong>Densidad cono: </strong>{this.state.lupulo.cone_density}<br />
+              <strong>Capacidad cono: </strong>{this.state.lupulo.cone_capacity}<br />
+              <strong>Facilidad cosecha: </strong>{this.state.lupulo.ease_harvest}<br />
               <hr />
               <h4 className="text-success h3">Características químicas</h4>
-              <strong>Alfa acidos: </strong>{this.state.lupulo.alfa_acidos}<br />
-              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acidos}<br />
-              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulonas}<br />
-              <strong>Colupulonas: </strong>{this.state.lupulo.colupulonas}<br />
-              <strong>Indice almacenamiento: </strong>{this.state.lupulo.indice_almacenamiento}<br />
-              <strong>Humedad: </strong>{this.state.lupulo.humedad}
+              <strong>Alfa acidos: </strong>{this.state.lupulo.alpha_acids}<br />
+              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acids}<br />
+              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulones}<br />
+              <strong>Colupulonas: </strong>{this.state.lupulo.columbus}<br />
+              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index}<br />
+              <strong>Humedad: </strong>{this.state.lupulo.humidity}
             </div>
             <div className="col-lg-4 w-75 mx-auto">
               <div className="card text-center">
