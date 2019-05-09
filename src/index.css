@@ -1,9 +1,31 @@
 body {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 @media (max-width: 700px) {
   html {
     margin-top: 82px;
   }
+}
+
+/* Colores generales */
+
+.color-1 {
+  background-color: #375D3B;
+  color: white;
+}
+
+.color-2 {
+  background-color: #ABC8A4;
+  color: black;
+}
+
+.color-3 {
+  background-color: #C4D7A4;
+  color: black;
+}
+
+.color-4 {
+  background-color: #E1E6B9;
+  color: black;
 }

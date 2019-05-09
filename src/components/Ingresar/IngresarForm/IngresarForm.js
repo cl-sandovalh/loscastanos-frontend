@@ -12,7 +12,7 @@ const IngresarForm = (props) => {
             <input type="password" value={props.password} onChange={props.passwordChange} className="form-control" placeholder="Contraseña" required/>
           </div>
           <div className="form-group text-center">
-            <button type="submit" className="btn btn-success">Ingresar</button>
+            <button type="submit" className="btn color-1">Ingresar</button>
           </div>
         </form>
       </div>

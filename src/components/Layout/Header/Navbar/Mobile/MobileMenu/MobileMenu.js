@@ -14,22 +14,22 @@ const MobileMenu = (props) => {
   return (
     <div className={attachedStyles.join(' ') + " p-3"}>
       <div className="text-right">
-      <button className="btn" onClick={props.close}><i className="fas fa-times h2 text-light"></i></button>
+      <button className="btn" onClick={props.close}><i className="fas fa-times h2 text-dark"></i></button>
       </div>
       <ul className="navbar-nav text-center" onClick={props.close}>
         <li className="nav-item">
-          <NavLink to="/" exact className="nav-link text-light h3" activeClassName="font-weight-bold">Inicio</NavLink>
+          <NavLink to="/" exact className="nav-link text-dark h3" activeClassName="font-weight-bold">Inicio</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/lupulos" className="nav-link text-light h3" activeClassName="font-weight-bold">Lupulos</NavLink>
+          <NavLink to="/lupulos" className="nav-link text-dark h3" activeClassName="font-weight-bold">Lupulos</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/contacto" className="nav-link text-light h3" activeClassName="font-weight-bold">Contacto</NavLink>
+          <NavLink to="/contacto" className="nav-link text-dark h3" activeClassName="font-weight-bold">Contacto</NavLink>
         </li>
       </ul>
       <IngresarForm emailChange={props.emailChange} passwordChange={props.passwordChange} loginSubmit={props.loginSubmit}/>
       <div className="text-center">
-        <NavLink to="/registro" className="text-success" onClick={props.close}>Crear una cuenta</NavLink>
+        <NavLink to="/registro" className="text-dark" onClick={props.close}>Crear una cuenta</NavLink>
       </div>
     </div>
   )
