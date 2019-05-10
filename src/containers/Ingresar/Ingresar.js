@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import IngresarForm from '../../components/Ingresar/IngresarForm/IngresarForm';
+import IngresarForm from '../../components/Ingresar/IngresarForm';
 
 class Ingresar extends Component {
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container my-5">
         <h4 className="display-4 text-center">Ingresar</h4>
         <hr />
         <IngresarForm />

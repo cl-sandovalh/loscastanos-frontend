@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import styles from './MobileMenu.module.css';
 
-import IngresarForm from '../../../../../Ingresar/IngresarForm/IngresarForm';
+import IngresarForm from '../../Ingresar/IngresarForm';
 
 const MobileMenu = (props) => {
   let attachedStyles = [styles.MobileMenu, styles.Close];

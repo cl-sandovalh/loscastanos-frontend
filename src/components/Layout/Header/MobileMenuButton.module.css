@@ -1,12 +1,11 @@
-.MobileOnly {
-  z-index: 100;
+.Mobile {
+  width: 100%;
   text-align: right;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  height: 60px;
 }
 
 .Button {
   color: #E1E6B9;
+  font-size: 28px;
 }
 
 .Button:hover,
@@ -15,7 +14,7 @@
 }
 
 @media (min-width: 701px) {
-  .MobileOnly {
+  .Mobile {
     display: none;
   }
 }

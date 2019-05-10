@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Spinner from '../../components/UI/Spinner/Spinner';
-import ListaLupulos from '../../components/Lupulos/ListaLupulos/ListaLupulos';
-import ProgressTop from '../../components/UI/ProgressTop/ProgressTop';
+import Spinner from '../../components/UI/Spinner';
+import ListaLupulos from '../../components/Lupulos/ListaLupulos';
+import ProgressTop from '../../components/UI/ProgressTop';
 
 class Lupulos extends Component {
   state = {
@@ -44,7 +44,7 @@ class Lupulos extends Component {
     return (
       <>
         {!this.state.lupulos && !this.state.error ? <ProgressTop /> : null}
-        <div className="container mt-5">
+        <div className="container my-5">
           <h4 className="display-4 text-center">Lupulos</h4>
           <hr />
           {lupulos}

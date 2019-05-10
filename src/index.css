@@ -2,16 +2,16 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
-@media (max-width: 700px) {
-  html {
-    margin-top: 60px;
-  }
-}
-
 /* Colores generales */
 
 .color-1 {
   background-color: #375D3B;
+  color: white;
+}
+
+.color-1:hover,
+.color-1:active {
+  box-shadow: 0px 0px 10px #375D3B;
   color: white;
 }
 

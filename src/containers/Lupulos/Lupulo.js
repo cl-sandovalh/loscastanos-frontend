@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
-import Spinner from '../../../components/UI/Spinner/Spinner';
-import ProgressTop from '../../../components/UI/ProgressTop/ProgressTop';
+import Spinner from '../../components/UI/Spinner';
+import ProgressTop from '../../components/UI/ProgressTop';
 
 class Lupulo extends Component {
   state = {
     lupulo: null,
-    loaded: false,
     error: false
   };
 
@@ -18,7 +17,6 @@ class Lupulo extends Component {
       .then(response => {
         this.setState({
           lupulo: response.data,
-          loaded: true
         });
       })
       .catch(error => {
@@ -33,20 +31,14 @@ class Lupulo extends Component {
     let precio = null;
     let lupulo = <Spinner />
 
-    if (this.state.loaded && (this.state.error || !this.state.lupulo)) {
-      lupulo = <p className="lead text-center">El producto no existe.</p>
+    if (this.state.error) {
+      lupulo = <p className="lead text-center my-5">El producto no existe.</p>
     }
     
     if (this.state.lupulo) {
       precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(this.state.lupulo.amount);
       lupulo = (
         <>
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item"><NavLink to="/lupulos" className="text-success">Lupulos</NavLink></li>
-              <li className="breadcrumb-item active" aria-current="page">{this.state.lupulo.name}</li>
-            </ol>
-          </nav>
           <h4 className="display-4">{this.state.lupulo.name}</h4>
           <hr />
           <div className="row">
@@ -77,7 +69,7 @@ class Lupulo extends Component {
                 <div className="card-body">
                   <h5 className="card-title h2">{precio}</h5>
                   <p className="card-text">Cantidad disponible: {this.state.lupulo.stock}</p>
-                  <button to="/carro" className="btn btn-success" disabled={this.state.lupulo.stock <= 0 ? true : false}>
+                  <button to="/carro" className="btn color-1" disabled={this.state.lupulo.stock <= 0 ? true : false}>
                     <i className="fas fa-cart-plus mr-2"></i>Agregar al carro
                   </button>
                 </div>
@@ -92,6 +84,12 @@ class Lupulo extends Component {
       <>
         {!this.state.lupulo && !this.state.error ? <ProgressTop /> : null}
         <div className="container my-5">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item"><NavLink to="/lupulos" className="text-success">Lupulos</NavLink></li>
+              <li className="breadcrumb-item active" aria-current="page">{this.state.lupulo ? this.state.lupulo.name : null} {this.state.error ? "?" : null}</li>
+            </ol>
+          </nav>
           {lupulo}
         </div>
       </>

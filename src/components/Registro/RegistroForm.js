@@ -50,7 +50,7 @@ const RegistroForm = (props) => {
             <input type="text" onChange={props.change} name="address" className="form-control" placeholder="Dirección" required/>
           </div>
           <div className="form-group text-center">
-            <button type="submit" className="btn btn-success">Registrarme</button>
+            <button type="submit" className="btn color-1">Registrarme</button>
           </div>
         </form>
       </div>

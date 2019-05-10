@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
-import Layout from './hoc/Layout/Layout';
+import Layout from './hoc/Layout';
 import Inicio from './containers/Inicio/Inicio';
 import Lupulos from './containers/Lupulos/Lupulos';
-import Lupulo from './containers/Lupulos/Lupulo/Lupulo';
+import Lupulo from './containers/Lupulos/Lupulo';
 import Contacto from './containers/Contacto/Contacto';
 import Pagar from './containers/Pagar/Pagar';
 import Ingresar from './containers/Ingresar/Ingresar';

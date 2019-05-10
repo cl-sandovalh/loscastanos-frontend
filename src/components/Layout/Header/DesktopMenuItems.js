@@ -1,14 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import styles from './Desktop.module.css';
-
-import Logo from '../../Logo/Logo';
+import styles from './DesktopMenuItems.module.css';
 
 const Desktop = () => {
   return (
-    <nav className={styles.DesktopOnly + " navbar navbar-expand navbar-dark bg-dark"}>
-      <Logo />
+    <div className={styles.Desktop}>
       <div className="collapse navbar-collapse ml-3">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -30,7 +27,7 @@ const Desktop = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
   )
 }
 

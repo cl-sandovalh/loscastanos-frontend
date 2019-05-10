@@ -1,0 +1,9 @@
+.Navbar {
+  position: absolute;
+  z-index: 120;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding-left: 80px;
+  max-height: 56px;
+  background-color: rgba(0, 0, 0, 0.8);
+}

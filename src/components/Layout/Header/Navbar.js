@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import Desktop from './Desktop/Desktop';
-import Mobile from './Mobile/Mobile';
-import MobileMenu from './Mobile/MobileMenu/MobileMenu';
+import styles from './Navbar.module.css';
+
+import MobileMenuButton from './MobileMenuButton';
+import MobileMenu from './MobileMenu';
+import DesktopMenuItems from './DesktopMenuItems';
+import Logo from './Logo';
 
 class Navbar extends Component {
   state = {
@@ -46,8 +49,11 @@ class Navbar extends Component {
   render() {
     return (
       <>
-        <Desktop />
-        <Mobile open={this.mobileMenuOpenHandler} />
+        <nav className={styles.Navbar + " navbar navbar-expand navbar-dark"}>
+          <Logo />
+          <DesktopMenuItems />
+          <MobileMenuButton open={this.mobileMenuOpenHandler} />
+        </nav>
         <MobileMenu 
           toggle={this.state.mobileMenu} 
           close={this.mobileMenuCloseHandler} 

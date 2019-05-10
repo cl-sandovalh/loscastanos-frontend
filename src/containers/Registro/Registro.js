@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import RegistroForm from '../../components/Registro/RegistroForm/RegistroForm';
+import RegistroForm from '../../components/Registro/RegistroForm';
 
 class Registro extends Component {
   state = {
@@ -30,7 +30,7 @@ class Registro extends Component {
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container my-5">
         <h4 className="display-4 text-center">Registro</h4>
         <hr />
         <RegistroForm change={this.inputChangeHandler} submit={this.formSubmitHandler} />

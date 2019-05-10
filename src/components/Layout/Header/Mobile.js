@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Mobile.module.css';
 
-import Logo from '../../Logo/Logo';
+import Logo from './Logo';
 
 const Mobile = (props) => {
   return (

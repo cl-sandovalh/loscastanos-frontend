@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Image from '../../../../assets/lupulos-header.jpg';
+import Image from '../../../assets/lupulos-header.jpg';
 import styles from './Hero.module.css';
 
 const Hero = () => (
