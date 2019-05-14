@@ -61,7 +61,7 @@ class Lupulo extends Component {
               <strong>Beta acidos: </strong>{this.state.lupulo.beta_acids} %<br />
               <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulones} %<br />
               <strong>Colupulonas: </strong>{this.state.lupulo.columbus} %<br />
-              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index} %<br />
+              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index}<br />
               <strong>Humedad: </strong>{this.state.lupulo.humidity} %
             </div>
             <div className="col-lg-4 w-75 mx-auto">
