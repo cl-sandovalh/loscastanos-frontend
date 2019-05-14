@@ -8,7 +8,10 @@ import ProgressTop from '../../components/UI/ProgressTop';
 class Lupulo extends Component {
   state = {
     lupulo: null,
-    error: false
+    error: false,
+    type: null,
+    flor: false,
+    pellet: false
   };
 
   componentDidMount() {
@@ -25,6 +28,16 @@ class Lupulo extends Component {
         });
       });
     }
+  }
+
+  changeLupuloType = (event) => {
+    let contrario = event.target.id === 'flor' ? 'pellet' : 'flor';
+
+    this.setState({
+      type: event.target.id,
+      [event.target.id]: true,
+      [contrario]: false
+    });
   }
 
   render() {
@@ -67,7 +80,18 @@ class Lupulo extends Component {
             <div className="col-lg-4 w-75 mx-auto">
               <div className="card text-center">
                 <div className="card-body">
-                  <h5 className="card-title h2">{precio}</h5>
+                  { 
+                    this.state.type ? <h5 className="card-title h2">{precio}</h5> 
+                    : <p className="card-text">Elija el tipo de producto.</p>
+                  }
+                  <div className="form-check">
+                    <input type="radio" id="flor" onClick={this.changeLupuloType} className="form-check-input" checked={this.state.flor}/>
+                    <label className="form-check-label">Flor</label>
+                  </div>
+                  <div className="form-check">
+                    <input type="radio" id="pellet" onClick={this.changeLupuloType} className="form-check-input" checked={this.state.pellet}/>
+                    <label className="form-check-label">Pellet</label>
+                  </div>
                   <p className="card-text">Cantidad disponible: {this.state.lupulo.stock}</p>
                   <button to="/carro" className="btn color-1" disabled={this.state.lupulo.stock <= 0 ? true : false}>
                     <i className="fas fa-cart-plus mr-2"></i>Agregar al carro
