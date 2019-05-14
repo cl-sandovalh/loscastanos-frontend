@@ -1,0 +1,15 @@
+.Radio {
+  margin: 5px;
+  background-color: transparent;
+  border: 2px solid #375D3B;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+  width: 20px;
+  -webkit-appearance: none;
+}
+
+.Radio:checked {
+  background-color: #375D3B;
+}

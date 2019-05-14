@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom';
 
 import Spinner from '../../components/UI/Spinner';
 import ProgressTop from '../../components/UI/ProgressTop';
+import LupuloInformacion from '../../components/Lupulo/LupuloInformacion';
+import LupuloCarro from '../../components/Lupulo/LupuloCarro';
 
 class Lupulo extends Component {
   state = {
     lupulo: null,
     error: false,
-    type: null,
-    flor: false,
-    pellet: false
+    selectedType: 'flor'
   };
 
   componentDidMount() {
@@ -30,18 +30,14 @@ class Lupulo extends Component {
     }
   }
 
-  changeLupuloType = (event) => {
-    let contrario = event.target.id === 'flor' ? 'pellet' : 'flor';
-
+  handleLupuloType = (event) => {
     this.setState({
-      type: event.target.id,
-      [event.target.id]: true,
-      [contrario]: false
+      selectedType: event.target.value
     });
+    
   }
 
   render() {
-    let precio = null;
     let lupulo = <Spinner />
 
     if (this.state.error) {
@@ -49,56 +45,13 @@ class Lupulo extends Component {
     }
     
     if (this.state.lupulo) {
-      precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(this.state.lupulo.amount);
       lupulo = (
         <>
           <h4 className="display-4">{this.state.lupulo.name}</h4>
           <hr />
           <div className="row">
-            <div className="col-lg-4 mb-5">
-              <div className="text-center"><img className="mw-100 rounded" src={"https://loscastanosapi.herokuapp.com/" + this.state.lupulo.image} alt={this.state.lupulo.name} /></div><br />
-              <p><strong>Tipo: </strong><br />{this.state.lupulo.lupulo_type}</p>
-              <p><strong>Descripcion: </strong><br />{this.state.lupulo.description}</p>
-            </div>
-            <div className="col-lg-4 mb-5">
-              <h4 className="text-success h3">Características físicas</h4>
-              <strong>Tamaño cono: </strong>{this.state.lupulo.cone_size}<br />
-              <strong>Forma cono: </strong>{this.state.lupulo.cone_shape}<br />
-              <strong>Lupulina: </strong>{this.state.lupulo.lupulin}<br />
-              <strong>Densidad cono: </strong>{this.state.lupulo.cone_density}<br />
-              <strong>Capacidad cono: </strong>{this.state.lupulo.cone_capacity}<br />
-              <strong>Facilidad cosecha: </strong>{this.state.lupulo.ease_harvest}<br />
-              <hr />
-              <h4 className="text-success h3">Características químicas</h4>
-              <strong>Alfa acidos: </strong>{this.state.lupulo.alpha_acids} %<br />
-              <strong>Beta acidos: </strong>{this.state.lupulo.beta_acids} %<br />
-              <strong>Cohumulonas: </strong>{this.state.lupulo.cohumulones} %<br />
-              <strong>Colupulonas: </strong>{this.state.lupulo.columbus} %<br />
-              <strong>Indice almacenamiento: </strong>{this.state.lupulo.storage_index}<br />
-              <strong>Humedad: </strong>{this.state.lupulo.humidity} %
-            </div>
-            <div className="col-lg-4 w-75 mx-auto">
-              <div className="card text-center">
-                <div className="card-body">
-                  { 
-                    this.state.type ? <h5 className="card-title h2">{precio}</h5> 
-                    : <p className="card-text">Elija el tipo de producto.</p>
-                  }
-                  <div className="form-check">
-                    <input type="radio" id="flor" onClick={this.changeLupuloType} className="form-check-input" checked={this.state.flor}/>
-                    <label className="form-check-label">Flor</label>
-                  </div>
-                  <div className="form-check">
-                    <input type="radio" id="pellet" onClick={this.changeLupuloType} className="form-check-input" checked={this.state.pellet}/>
-                    <label className="form-check-label">Pellet</label>
-                  </div>
-                  <p className="card-text">Cantidad disponible: {this.state.lupulo.stock}</p>
-                  <button to="/carro" className="btn color-1" disabled={this.state.lupulo.stock <= 0 ? true : false}>
-                    <i className="fas fa-cart-plus mr-2"></i>Agregar al carro
-                  </button>
-                </div>
-              </div>
-            </div>
+            <LupuloInformacion lupulo={this.state.lupulo} />
+            <LupuloCarro lupulo={this.state.lupulo} selectedType={this.state.selectedType} handleLupuloType={this.handleLupuloType} />
           </div>
         </>
       );
