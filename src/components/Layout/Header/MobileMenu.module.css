@@ -1,4 +1,5 @@
 .MobileMenu {
+  overflow-y: hidden;
   position: fixed;
   width: 100%;
   max-width: 100%;
