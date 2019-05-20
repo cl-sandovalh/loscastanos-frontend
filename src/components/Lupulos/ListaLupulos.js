@@ -14,6 +14,8 @@ const ListaLupulos = (props) => {
               nombre={lupulo.name} 
               tipo={lupulo.lupulo_type} 
               descripcion={lupulo.description}
+              uses={lupulo.uses}
+              beer_type={lupulo.beer_type}
               precio={lupulo.amount}
               stock={lupulo.stock}
             />

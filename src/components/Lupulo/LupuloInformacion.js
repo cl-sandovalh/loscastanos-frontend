@@ -5,17 +5,19 @@ const LupuloInformacion = (props) => {
     <>
       <div className="col-lg-4 mb-5">
         <div className="text-center"><img className="mw-100 rounded" src={"https://loscastanosapi.herokuapp.com/" + props.lupulo.image} alt={props.lupulo.name} /></div><br />
-        <p><strong>Tipo: </strong><br />{props.lupulo.lupulo_type}</p>
+        <p><strong>Origen: </strong><br />{props.lupulo.lupulo_type}</p>
         <p><strong>Descripcion: </strong><br />{props.lupulo.description}</p>
+        <p><strong>Uso: </strong><br />{props.lupulo.uses}</p>
+        <p><strong>Estilos de cerveza: </strong><br />{props.lupulo.beer_type}</p>
       </div>
       <div className="col-lg-4 mb-5">
         <h4 className="text-success h3">Características físicas</h4>
         <strong>Tamaño cono: </strong>{props.lupulo.cone_size}<br />
         <strong>Forma cono: </strong>{props.lupulo.cone_shape}<br />
-        <strong>Lupulina: </strong>{props.lupulo.lupulin}<br />
+        {/* <strong>Lupulina: </strong>{props.lupulo.lupulin}<br />
         <strong>Densidad cono: </strong>{props.lupulo.cone_density}<br />
         <strong>Capacidad cono: </strong>{props.lupulo.cone_capacity}<br />
-        <strong>Facilidad cosecha: </strong>{props.lupulo.ease_harvest}<br />
+        <strong>Facilidad cosecha: </strong>{props.lupulo.ease_harvest}<br /> */}
         <hr />
         <h4 className="text-success h3">Características químicas</h4>
         <strong>Alfa acidos: </strong>{props.lupulo.alpha_acids} %<br />

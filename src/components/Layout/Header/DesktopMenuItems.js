@@ -11,8 +11,12 @@ const Desktop = () => {
           <li className="nav-item">
             <NavLink to="/" exact className="nav-link">Inicio</NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink to="/lupulos" className="nav-link">Lupulos</NavLink>
+          <li class="nav-item dropdown">
+            <NavLink class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lupulos</NavLink>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <NavLink class="dropdown-item" to="Lupulos">Flor</NavLink>
+              <NavLink class="dropdown-item" to="/">Pellet</NavLink>
+            </div>
           </li>
           <li className="nav-item">
             <NavLink to="/contacto" className="nav-link">Contacto</NavLink>

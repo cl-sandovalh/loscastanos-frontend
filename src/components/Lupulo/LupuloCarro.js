@@ -13,18 +13,18 @@ const LupuloCarro = (props) => {
           <div className="form-check form-check-inline">
             <input 
               className={styles.Radio}
-              type="radio" name="type" value="flor" 
-              onChange={props.handleLupuloType} checked={props.selectedType === 'flor'} 
+              type="radio" name="type" value="100grs" 
+              onChange={props.handleLupuloType} checked={props.selectedType === '100grs'} 
             />
-            <label className="form-check-label">Flor</label>
+            <label className="form-check-label">100grs</label>
           </div>
           <div className="form-check form-check-inline">
             <input 
               className={styles.Radio} 
-              type="radio" name="type" value="pellet" 
-              onChange={props.handleLupuloType} checked={props.selectedType === 'pellet'} 
+              type="radio" name="type" value="50grs" 
+              onChange={props.handleLupuloType} checked={props.selectedType === '50grs'} 
             />
-            <label className="form-check-label">Pellet</label>
+            <label className="form-check-label">50grs</label>
           </div>
           <p className="card-text mt-2">Cantidad disponible: {props.lupulo.stock}</p>
           <button to="/carro" className="btn color-1" disabled={props.lupulo.stock <= 0 ? true : false}>
