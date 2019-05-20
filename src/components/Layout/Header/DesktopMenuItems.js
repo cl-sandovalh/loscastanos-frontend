@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './DesktopMenuItems.module.css';
 
@@ -14,8 +15,8 @@ const Desktop = () => {
           <li class="nav-item dropdown">
             <NavLink class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lupulos</NavLink>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <NavLink class="dropdown-item" to="Lupulos">Flor</NavLink>
-              <NavLink class="dropdown-item" to="/">Pellet</NavLink>
+              <Link class="dropdown-item" to="/lupulos">Flor</Link>
+              <Link class="dropdown-item" to="/">Pellet</Link>
             </div>
           </li>
           <li className="nav-item">
