@@ -1,6 +1,6 @@
 .Hero {
   width: 100%;
-  height: 150px;
+  height: 300px;
   position: relative;
 }
 
@@ -18,9 +18,15 @@
   font-weight: bold;
   color: rgba(0, 0, 0, 0.7);
   width: 100%;
-  font-size: 20px;
+  font-size: 30px;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 570px){
+  .Texto{
+    font-size: 20px;
+  }
 }

@@ -7,10 +7,10 @@ const Hero = () => (
   <>
   <div className={styles.Hero}>
     <img src={Image} className={styles.Image + " position-absolute"} alt="Imagen header" />
-    {/* <p className={styles.Texto}>
+    <p className={styles.Texto}>  
       Un sueño y pasión transformado en emprendimiento.<br />
       Todo comienza con un rizoma hasta llegar a una rica cerveza.
-    </p> */}
+    </p>
   </div>
   </>
 );
