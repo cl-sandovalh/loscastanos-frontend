@@ -4,8 +4,8 @@ const LupuloInformacion = (props) => {
   return (
     <>
       <div className="col-lg-4 mb-5">
-        <div className="text-center"><img className="mw-100 rounded" src={"https://loscastanosapi.herokuapp.com/" + props.lupulo.image} alt={props.lupulo.name} /></div><br />
-        <p><strong>Origen: </strong><br />{props.lupulo.lupulo_type}</p>
+        <div className="text-center"><img className="mw-100 rounded" src={"https://loscastanosapi.herokuapp.com" + props.lupulo.image} alt={props.lupulo.name} /></div><br />
+        <p><strong>Origen: </strong><br />{props.lupulo.origin}</p>
         <p><strong>Descripcion: </strong><br />{props.lupulo.description}</p>
         <p><strong>Uso: </strong><br />{props.lupulo.uses}</p>
         <p><strong>Estilos de cerveza: </strong><br />{props.lupulo.beer_type}</p>

@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './LupuloCarro.module.css';
 
 const LupuloCarro = (props) => {
-  const precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(props.lupulo.amount);
+  const precio = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(props.lupulo.price);
   return (
     <div className="col-lg-4 w-75 mx-auto">
       <div className="card text-center">
