@@ -5,11 +5,13 @@ const ContactoForm = (props) => {
 <div class="d-flex justify-content-center">
     <div class="col-lg-4 col-sm-6">
         <form>
-            <div class="form-group">
-                <input class="form-control mt-3" type="text" placeholder="Nombre"></input>
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Apellido"></input>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <input class="form-control" type="text" placeholder="Nombre"></input>
+                </div>
+                <div class="form-group col-6">
+                    <input class="form-control" type="text" placeholder="Apellido"></input>
+                </div>
             </div>
             <div class="form-group">
                 <input class="form-control" type="email" placeholder="Telefono"></input>

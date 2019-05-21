@@ -31,7 +31,7 @@ class Registro extends Component {
   render() {
     return (
       <div className="container my-5">
-        <h4 className="display-4 text-center">Registro</h4>
+        <h1 className="text-center text-uppercase">Registro</h1>
         <hr />
         <RegistroForm change={this.inputChangeHandler} submit={this.formSubmitHandler} />
         <div className="text-center">
