@@ -3,7 +3,7 @@ import React from 'react';
 const ContactoForm = (props) => {
     return(
 <div class="d-flex justify-content-center">
-    <div class="col-4">
+    <div class="col-lg-4  col-sm-6">
         <form>
             <div class="form-group">
                 <input class="form-control mt-3" type="text" placeholder="Nombre"></input>
@@ -23,7 +23,7 @@ const ContactoForm = (props) => {
             <div class="form-group">
                 <textarea class="form-control" id="" rows="4" placeholder="Deja tu mensaje aqui"></textarea>
             </div>
-            <div class="d-flex justify-content-center m-5">
+            <div class="d-flex justify-content-center m-4">
                 <button type="submit" class="btn btn-success">Enviar</button>
             </div>
         </form>
